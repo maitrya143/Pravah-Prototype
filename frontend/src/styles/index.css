@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-warm-200;
+  }
+  
+  body {
+    @apply bg-warm-50 text-warm-800 font-sans antialiased;
+  }
+  
+  h1 {
+    @apply text-h1;
+  }
+  
+  h2 {
+    @apply text-h2;
+  }
+  
+  h3 {
+    @apply text-h3;
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500;
+  }
+  
+  .btn-outline {
+    @apply btn border-2 border-primary-500 text-primary-500 hover:bg-primary-50 focus:ring-primary-500;
+  }
+  
+  .btn-ghost {
+    @apply btn text-warm-700 hover:bg-warm-100 focus:ring-warm-500;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-warm-200 p-6;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-md transition-shadow duration-200;
+  }
+  
+  /* Input Styles */
+  .input {
+    @apply w-full px-4 py-2 border border-warm-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-warm-700 hover:bg-warm-100 transition-colors duration-200;
+  }
+  
+  .sidebar-link-active {
+    @apply sidebar-link bg-primary-50 text-primary-600 font-medium;
+  }
+}
+
+@layer utilities {
+  /* Toast animations */
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.3s ease-out;
+  }
+
+  /* Mobile responsive improvements */
+  @media (max-width: 640px) {
+    .card {
+      @apply p-4;
+    }
+    
+    .btn {
+      @apply px-3 py-1.5 text-sm;
+    }
+  }
+}
+
